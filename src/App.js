@@ -1,4 +1,5 @@
 import ValidationSample from './ValidationSample';
+import IterationSample from './IterationSample';
 
 import { Component } from 'react';
 
@@ -6,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <ValidationSample />
+        <IterationSample />
       </div>
     );
   }
