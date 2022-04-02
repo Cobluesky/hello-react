@@ -1,32 +1,18 @@
 import ValidationSample from './ValidationSample';
 import IterationSample from './IterationSample';
 import LifeCycleSample from './LifeCycleSample';
+import Counter from './Counter';
 
 import { Component } from 'react';
 
-function getRandomColor() {
-  return '#' + Math.floor(Math.random() * 16777215).toString(16);
-}
+import React from 'react';
 
-class App extends Component {
-  state =
-    {
-      color: '#000000'
-    }
+const App = () => {
+  return (
+    <div>
+      <Counter />;
+    </div>
+  );
+};
 
-  handleClick = () => {
-    this.setState({
-      color: getRandomColor()
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <button onClick={this.handleClick}>랜덤 색상</button>
-        <LifeCycleSample color={this.state.color} />
-      </div>
-    );
-  }
-}
 export default App;

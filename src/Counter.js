@@ -1,27 +1,17 @@
-import { Component } from "react/cjs/react.production.min";
-
 import React from 'react';
+import { useState } from 'react/cjs/react.production.min';
 
-class Counter extends Component {
-    state = {
-        number: 0,
-        fixedNumber: 0
-    };
-    render() {
-        const { number, fixedNumber } = this.state;
-        return (
-            <div>
-                <h1>{number}</h1>
-                <h2>Fixed Value : {fixedNumber}</h2>
-                <button
-                    onClick={() => {
-                        this.setState({ fixedNumber: fixedNumber + 1 });
-                    }}
-                >
-                    +1
-                </button>
-            </div>
-        )
-    }
-}
+const Counter = () => {
+    const [value, setValue] = useState(0);
+    return (
+        <div>
+            <p>
+                현재 카운터 값 = <b>{value}</b>
+            </p>
+            <button onClick={() => setValue(value + 1)}>+1</button>
+            <button onClick={() => setValue(value - 1)}>-1</button>
+        </div>
+    );
+};
+
 export default Counter;
