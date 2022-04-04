@@ -44,7 +44,7 @@ class LifeCycleSample extends Component {
     getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('getSnapshotBeforUpdate');
         if (prevProps.color !== this.props.color) {
-            return this.mtRef.style.color;
+            return this.myRef.style.color;
         }
         return null;
     }
