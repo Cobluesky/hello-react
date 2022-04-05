@@ -1,6 +1,7 @@
 import ValidationSample from './ValidationSample';
 import IterationSample from './IterationSample';
 import LifeCycleSample from './LifeCycleSample';
+import ErrorBoundary from './ErrorBoundary';
 import Counter from './Counter';
 
 import { Component } from 'react';
@@ -27,7 +28,9 @@ class App extends Component {
     return (
       < div >
         <button onClick={this.handleClick}>랜덤 색상</button>
-        <LifeCycleSample color={this.state.color}></LifeCycleSample>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color}></LifeCycleSample>
+        </ErrorBoundary>
       </div >
     );
   }
